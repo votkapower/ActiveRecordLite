@@ -1,7 +1,7 @@
 # ActiveRecordLite
 А vary simple php &amp; mysql custom Active record class for **small projects** - if you need realy fast  connection to database for 2s without configuring 10+ files.
 
-#config
+# Config
 
 Open Model.php and modify the connection with database.
 
@@ -12,7 +12,7 @@ Open Model.php and modify the connection with database.
 	private static $dbname = 'database'; //fill this ..
 	....
 
-#Ustage
+# Ustage
 
 Here are some basic cases that show you how to use this class. You can also see the **example_use.php** file
 
@@ -37,7 +37,7 @@ class Users extends Model{
 ```
 Thats it! Now you are ready to use it. Here is how you use it.
 
-#Get one row from table by ID(primary key)
+# Get one row from table by ID(primary key)
 
 ```
 $user = new Users;
@@ -49,13 +49,13 @@ $user->find(1);
 echo $user->email; 
 ```
 
-#Get All records from table
+# Get All records from table
 
 ```
 $users = new Users; // instantiate the class
 echo $users->all(); .. get all recorst with the **all()** method
 ```
-#Delete record
+# Delete record
 
 Okeeyy, there are 2 ways.  
 The first one is very simple. Just pass an ID to the **delete()** method and thats it.
@@ -71,7 +71,7 @@ echo $user->username;
 $users->delete(); // delete the found user!
 ```
 
-#Create/Update
+# Create/Update
 
 Okeyy, thats fun. There is a universal method called **save()**
 
