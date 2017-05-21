@@ -2,6 +2,7 @@
 А vary simple php &amp; mysql custom Active record class for **small projects** - if you need realy fast  connection to database for 2s without configuring 10+ files.
 
 #config
+
 Open Model.php and modify the connection with database.
 
     ...
@@ -12,6 +13,7 @@ Open Model.php and modify the connection with database.
 	....
 
 #Ustage
+
 Here are some basic cases that show you how to use this class. You can also see the **example_use.php** file
 
  1. Create new class (*If its possible with the name of the  of the table*)
@@ -19,8 +21,9 @@ Here are some basic cases that show you how to use this class. You can also see 
  3. Use parent model construct as shown to enable connection
 
  *-- Optional --*
- *  If your class name IS NOT the same as your table name, you can specify the table as shown
- *  If your primary key filed IS NOT 'id', you can specify that as well.
+ *  If your class name IS NOT the same as your table name, you can specify the table as shown*
+ *  If your primary key filed IS NOT 'id', you can specify that as well.*
+
 ```
 class Users extends Model{
 	public $table = 'users'; // name of your table(optional, if your class name **IS NOT** the same as your table)
@@ -35,6 +38,7 @@ class Users extends Model{
 Thats it! Now you are ready to use it. Here is how you use it.
 
 #Get one row from table by ID(primary key)
+
 ```
 $user = new Users;
 echo $user->find(2)->username; // use a **find(id)** method
@@ -44,12 +48,15 @@ $user = new Users;
 $user->find(1);
 echo $user->email; 
 ```
+
 #Get All records from table
+
 ```
 $users = new Users; // instantiate the class
 echo $users->all(); .. get all recorst with the **all()** method
 ```
 #Delete record
+
 Okeeyy, there are 2 ways.  
 The first one is very simple. Just pass an ID to the **delete()** method and thats it.
 ```
@@ -64,11 +71,13 @@ echo $user->username;
 $users->delete(); // delete the found user!
 ```
 
-##Create/Update
+#Create/Update
+
 Okeyy, thats fun. There is a universal method called **save()**
 
 **Creating new record:**
 Just remember that the *$user* properties must be the same as the columns in your table. So if try to set *$user->isAdmin = 1;*  and in my table **isAdmin** doesn't exits, it will fail !!!
+
 ```
 $user = new Users;
 $user->username = "voTkaPoweR";
@@ -79,6 +88,7 @@ $user->save();
 
 **Updating record:**
 You can only update a record if you have found a row by the **find(id)** method.
+
 ```
 $user = new Users;
 $user->find(1); // get first row
